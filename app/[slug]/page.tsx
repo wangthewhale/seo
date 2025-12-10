@@ -20,7 +20,7 @@ type PageRow = {
 // 共用：從 Supabase 抓一筆 page 資料
 async function getPageData(slug: string): Promise<PageRow | null> {
   const { data, error } = await supabase
-    .from("pages")
+    .from("seed_pages")
     .select("*")
     .eq("slug", slug)
     .single();
